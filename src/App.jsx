@@ -25,7 +25,12 @@ function App() {
     {question: "What is Fish in Spanish?", answer: "Pescado!"},
     {question: "What is Horse in Spanish?", answer: "Caballo!"},
     {question: "What is Cow in Spanish?", answer: "Vaca!"},
-
+    {question: "What is Pig in Spanish?", answer: "Puerco!"},
+    {question: "What is Chicken in Spanish", answer: "Pollo!"},
+    {question: "What is Duck in Spanish?", answer: "Pato!"},
+    {question: "What is Turkey in Spanish?", answer: "Pavo!"},
+    {question: "What is Sheep in Spanish?", answer: "Oveja!"},
+    {question: "What is Goat in Spanish?", answer: "Chiva!"},
   ]
 
   const handlePrevCard = () => {
@@ -43,8 +48,6 @@ function App() {
     setFlipped(!flipped);
   };
 
-  // TODO add animation of flipping cards / transitions 
-  // TODO add css elements to make it look better
 
   const handleRandomCard = () => {
     setFlipped(false);
@@ -59,25 +62,23 @@ function App() {
     <>
       <div className='app'>
         <h1 className='header'>SPANISH FLASHCARDS!!</h1>
-        <h2>Learn Spanish here! RIGHT NOW!! </h2>
-        <h3>ANSWER ALL CORRECTLY AND WIN FREE IPAD !!!</h3>
-        <h4>Just kidding, you get nothing. But you do get to learn Spanish!</h4>
-        <h4>Total Cards: {flashcard_list.length}</h4>
+        <h3>Total Cards: {flashcard_list.length}</h3>
+        <div className='flashcard-inner'>
+          <Flashcard
+            flipped={flipped}
+            onFlip={handleFlipCard}
+            question={flashcard_list[currentIndex].question}
+            answer={flashcard_list[currentIndex].answer}
+          />
       </div>
-      <div className='flashcard-inner'>
-      <div className='flashcard'>
-        <Flashcard
-          flipped={flipped}
-          onFlip={handleFlipCard}
-          question={flashcard_list[currentIndex].question}
-          answer={flashcard_list[currentIndex].answer}
-        />
+        <div>
+          
         </div>
-      </div>
-      <div className='button-layout'>
-        <button onClick={handlePrevCard}>Previous Card</button>
-        <button onClick={handleNextCard}>Next Card</button>
-        <button onClick={handleRandomCard}>Next Random Card</button>
+        <div className='button-layout'>
+          <button className='button' onClick={handlePrevCard}>⬅️ Previous </button>
+          <button className='button' onClick={handleNextCard}>➡️ Next</button>
+          <button className='button' onClick={handleRandomCard}>🔀 Shuffle Next Card</button>
+        </div>
       </div>
     </>
   )
