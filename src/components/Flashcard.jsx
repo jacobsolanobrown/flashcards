@@ -27,7 +27,7 @@ const Flashcard = ({ question, answer, flipped, onFlip}) => {
         )}
         </div>
       </div>
-      <div>
+      <div className="flashcard-answer">
         <form className="flashcard-form" onSubmit={handleSubmit}>
         <input 
           type="text" 
@@ -44,7 +44,7 @@ const Flashcard = ({ question, answer, flipped, onFlip}) => {
         </div>
         )}
       </div>
-      </div>
+    </div>
     );
 };
 

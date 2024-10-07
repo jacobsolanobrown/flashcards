@@ -42,3 +42,28 @@
 .flashcard-content-back {
     transform: rotateX(180deg);
 }
+
+.flashcard-answer {
+    display: block;
+    justify-content: center;
+}
+
+.flashcard-response {
+    display: flex;
+    justify-content: center;
+}
+
+.flashcard-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.flashcard-submit {
+    margin-left: 10px;
+    margin-right: 10px;
+}
